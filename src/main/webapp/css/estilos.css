@@ -24,9 +24,15 @@ body {
 
 /* ── LAYOUT GRID ─────────────────────────────────────────── */
 .pagina {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
+    background: #f0f2f5;
+}
+
+.pagina main {
+    flex: 1;
+    background: #f0f2f5;
 }
 
 .contenido-principal {
