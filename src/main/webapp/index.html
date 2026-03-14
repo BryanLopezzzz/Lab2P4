@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act. Investigacion</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="pagina">
+
+<header>
+    <div>
+        <div class="titulo-articulo">"SHS-HTTPS Enforcer: Enforcing HTTPS and preventing MITM Attacks"</div>
+        <div class="subtitulo-rojo">ACM SIGSOFT Software Engineering Notes, November 2015</div>
+    </div>
+</header>
+
+<nav class="barra-nav">
+    <a href="index.html">Inicio</a>
+    <a href="autores.html">Detalle de Autores</a>
+    <a href="referencias.html">Referencias</a>
+    <a href="images/articulo.pdf" target="_blank">Ver PDF</a>
+</nav>
+
+<main>
+    <div class="contenido-principal">
+
+        <!-- COLUMNA IZQUIERDA: Autores -->
+        <div class="celda-autores">
+            <h2>Datos Artículo y autores</h2>
+            <div class="autores-fotos">
+                <a href="autores.html#A1" class="autor-thumb">
+                    <img src="images/autor1.jpg" alt="Sugavanesh B">
+                    <span>Sugavanesh B</span>
+                </a>
+                <a href="autores.html#A2" class="autor-thumb">
+                    <img src="images/autor2.jpg" alt="Hari Prasath R">
+                    <span>Hari Prasath R</span>
+                </a>
+                <a href="autores.html#A3" class="autor-thumb">
+                    <img src="images/autor3.jpg" alt="Selvakumar S">
+                    <span>Selvakumar S</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: Estudiantes -->
+        <div class="celda-estudiantes">
+            <h3>Estudiantes</h3>
+            <ul>
+                <li>C. A. B. Rose</li>
+                <li>N. Náhiro With</li>
+            </ul>
+        </div>
+
+        <!-- FILA: Problema -->
+        <div class="celda">
+            <div class="celda-label">Problema</div>
+            <div class="celda-detalle">
+                <p>Las conexiones HTTPS son seguras, pero son encriptadas y provienen problemas como el MITM (Man In The Middle). Sin embargo la petición inicial del browser al servidor, responde en el protocolo de "handshake" para establecer las llaves de encriptación, es vulnerable (pues claramente aún no está encriptado).</p>
+                <p>Este artículo propone el uso de un "SHS-HTTPS Enforcer" que es un proceso tipo "daemon" que redirije las peticiones antes de que salgan del cliente, para verificar el URL en una lista de múltiples fuentes. Así, sin importar cual browser se esté usando, la petición será verificada antes de dirigirla al destino final.</p>
+            </div>
+        </div>
+
+        <!-- FILA: Otras soluciones -->
+        <div class="celda">
+            <div class="celda-label">Otras soluciones</div>
+            <div class="celda-detalle">
+                <p>Algunos browser (user agents), como Google Chrome y Firefox han atacado el problema incluyendo listas estáticas de URLs que solo pueden ser accedidas sobre conexiones seguras HTTPS. El problema es que cada browser tiene su lista. Así un URL puede estar en una lista pero no en la otra, y dependiendo del browser que se use la petición inicial podría ser vulnerable.</p>
+            </div>
+        </div>
+
+        <!-- FILA: Experimento -->
+        <div class="celda">
+            <div class="celda-label">Experimento</div>
+            <div class="celda-detalle">
+                <p>La solución propuesta fue solo implementada usando como "daemon" servidor proxy Squid. Se le experimentó con peticiones hacia URLs que están en la lista de un browser pero no en la de otro. La solución ha sido exitosa, logrando solo conexiones a sitios <a href="autores.html">seguros</a> y previniendo el problema MITM.</p>
+            </div>
+        </div>
+
+        <!-- FILA: Enlace PDF -->
+        <div class="celda-pdf">
+            El PDF del artículo completo puede ser consultado
+            <a href="images/articulo.pdf" target="_blank">aquí</a>
+            y la lista de referencias
+            <a href="referencias.html">aquí</a>.
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    Universidad Nacional &mdash; Escuela de Informática &mdash; Programación IV
+</footer>
+
+</body>
+</html>
